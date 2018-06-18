@@ -9,10 +9,19 @@
                         </div>
                         <div class="panel-body">
                             <p class="item-title"><a href="#">{{ $item->name }}</a></p>
+                            <div class="buttons text-center">
+                                @include('items.want_button', ['item' => $item])
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
+    
+ <div class="buttons text-center">
+                                @if (Auth::check())
+                                    @include('items.want_button', ['item' => $item])
+                                @endif
+                            </div>
 @endif
