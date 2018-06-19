@@ -38,8 +38,8 @@ use App\Http\Controllers\Controller;
          
             $client = new \RakutenRws_Client();
             
-            //s$client->setApplicationId('1053528237662903603');
-            $client->setApplicationId(env('RAKUTEN_APPLICATION_ID'));
+            $client->setApplicationId('1053528237662903603');
+           
             
             $rws_response = $client->execute('IchibaItemSearch', [
                 'keyword' => $keyword,
