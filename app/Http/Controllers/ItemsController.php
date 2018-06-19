@@ -33,13 +33,14 @@ use App\Http\Controllers\Controller;
 
         $keyword = request()->keyword;
         $items = [];
+        
         if ($keyword) {
          
             $client = new \RakutenRws_Client();
             
-            $client->setApplicationId('1053528237662903603');
+            //s$client->setApplicationId('1053528237662903603');
+            $client->setApplicationId(env('RAKUTEN_APPLICATION_ID'));
             
-
             $rws_response = $client->execute('IchibaItemSearch', [
                 'keyword' => $keyword,
                 'imageFlag' => 1,
